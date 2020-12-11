@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
-from create_cluedeck import *
+from api import *
 
 # main window of application
 main = Tk()
@@ -28,13 +28,13 @@ style.configure('qa.Label', font=('times new roman', 20, 'bold'), foreground='wh
 c_sv = StringVar()
 c_sv.set(cluedeck[q_num][0])
 c_lbl = Label(main, textvariable=c_sv, style='c.Label', wraplength=1000, justify='center')
-c_lbl.place(relx=0.5, rely=0.1, anchor='center')
+c_lbl.place(relx=0.5, rely=0.15, anchor='center')
 
 # question label shown on main window
 q_sv = StringVar()
 q_sv.set(cluedeck[q_num][1])
 q_lbl = Label(main, textvariable=q_sv, style='qa.Label', wraplength=1000, justify='center')
-q_lbl.place(relx=0.5, rely=0.3, anchor='center')
+q_lbl.place(relx=0.5, rely=0.35, anchor='center')
 
 # answer label shown on main window
 a_sv = StringVar()
@@ -42,7 +42,7 @@ a_sv.set(cluedeck[q_num][2])
 a_lbl = Label(main, textvariable=a_sv, style='qa.Label', wraplength=1000, justify='center')
 a_lbl.place_forget()
 
-# stores question count in a variable
+# un-hides the label containing the answer
 def show_answer():
     a_lbl.place(relx=0.5, rely=0.45, anchor='center')
 
