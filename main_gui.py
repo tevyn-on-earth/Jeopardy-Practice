@@ -12,7 +12,7 @@ main.minsize(1000, 750)
 main['background']='#16208a'
 
 # creates a deck of the specified number of clues
-deck_size = 50
+deck_size = 60
 cluedeck = create_cluedeck(deck_size)
 
 # initial index of the question
