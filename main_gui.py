@@ -50,16 +50,17 @@ def show_answer():
 def show_next():
     global q_num
     q_num += 1
+
+    # exits program once all clues are exhausted
+    if q_num > deck_size:
+        main.destroy()
+
     # hides the answer when entering the next question
     a_lbl.place_forget()
     # updates the labels for the category, question, and answer
     c_sv.set(cluedeck[q_num][0])
     q_sv.set(cluedeck[q_num][1])
     a_sv.set(cluedeck[q_num][2])
-
-    # exits program once all clues are exhausted
-    if q_num > deck_size:
-        main.destroy()
 
 # button to show the answer
 answer_btn = Button(main, text='Show Answer', style='TButton', command=show_answer)
